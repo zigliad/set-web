@@ -13,3 +13,29 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+@layer utilities {
+	.flex-vcenter {
+		@apply flex items-center;
+	}
+
+	.flex-hcenter {
+		@apply flex justify-center;
+	}
+
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	.full {
+		@apply w-full h-full;
+	}
+
+	.col-flex {
+		@apply flex flex-col;
+	}
+
+	.row-flex {
+		@apply flex flex-row;
+	}
+}
