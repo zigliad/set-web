@@ -1,4 +1,5 @@
 import { CssBaseline, StylesProvider, ThemeProvider } from "@material-ui/core";
+import Container from "react-modal-promise";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTitle } from "react-use";
 import { AppRouter } from "routing/AppRouter";
@@ -15,6 +16,7 @@ export const AppLoader = () => {
 				<Router>
 					<AppRouter />
 				</Router>
+				<Container />
 			</ThemeProvider>
 		</StylesProvider>
 	);

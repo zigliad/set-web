@@ -3,10 +3,10 @@ import { createTimeMode } from "modes/modes/time-mode/timeMode";
 import { Mode } from "modes/types/types";
 import { Supplier } from "types/utils/functions";
 
-export type Modes = "time60" | "time10" | "static2";
+export type Modes = "time60" | "time10" | "static6";
 
 export const modes: Record<Modes, Supplier<Mode>> = {
 	time60: createTimeMode(60),
 	time10: createTimeMode(10),
-	static2: createStaticMode(6),
+	static6: createStaticMode(6),
 };
