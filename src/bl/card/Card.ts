@@ -25,3 +25,5 @@ export default class Card {
 		return this.attributes.map((attr) => `${attr}`).join("-");
 	}
 }
+
+export type BLCard = Card;

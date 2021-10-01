@@ -8,7 +8,7 @@ export default class OddSizeSetValidator extends SetValidator {
 	constructor(attributes: number, options: number) {
 		super();
 
-		if (options % 2 == 0) {
+		if (options % 2 === 0) {
 			throw Error("Options (set size) must be odd");
 		}
 

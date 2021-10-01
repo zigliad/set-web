@@ -9,12 +9,12 @@ export function getKsCombinations<T>(set: T[], k: number) {
 	}
 
 	// K-sized set has only one K-sized subset.
-	if (k == set.length) {
+	if (k === set.length) {
 		return [set];
 	}
 
 	// There is N 1-sized subsets in a N-sized set.
-	if (k == 1) {
+	if (k === 1) {
 		combs = [];
 		for (i = 0; i < set.length; i++) {
 			combs.push([set[i]]);

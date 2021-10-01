@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-
 import { useIsDarkMode } from "../hooks/useIsDarkMode";
 
 export const light = createTheme({

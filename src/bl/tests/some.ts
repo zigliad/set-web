@@ -2,7 +2,7 @@ import Brain from "bl/brain/Brain";
 import OddSizeSetValidator from "bl/brain/parts/set-validator/OddSizeSetValidator";
 import BasicSetsComparator from "bl/brain/parts/sets-comparators/BasicSetsComparator";
 import ExcludeCardsGenerator from "bl/generators/card/ExcludeCardsGenerator";
-import BasicRandomCardExcludeGenerator from "bl/generators/card/random-exclude/BasicRandomCardGenerator";
+import BasicRandomCardExcludeGenerator from "bl/generators/card/random-exclude/BasicRandomCardExcludeGenerator";
 import BasicRandomCardGenerator from "bl/generators/card/random/BasicRandomCardGenerator";
 import BasicDeckGenerator from "bl/generators/deck/BasicDeckGenerator";
 import TimeMode from "bl/modes/single/TimeMode";
