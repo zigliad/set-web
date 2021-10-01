@@ -19,9 +19,9 @@ export default class OddSizeSetValidator extends SetValidator {
 	validate(maybeSet: Set): boolean {
 		let sumVector = new Array(this.attributes).fill(0);
 		for (const card of maybeSet) {
-			card.attributes.map((attribute, index) => {
-				sumVector[index] += attribute;
-			});
+			card.attributes.map(
+				(attribute, index) => (sumVector[index] += attribute)
+			);
 		}
 
 		return sumVector.every((x) => x % this.options === 0);

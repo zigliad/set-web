@@ -1,18 +1,12 @@
 import { Grid } from "@material-ui/core";
-import Deck from "bl/deck/Deck";
-import { PlayingCard } from "pages/game/playing-card/PlayingCard";
 import { useIsBreakpoint } from "hooks/useIsBreakpoint";
+import { useMode } from "modes/context/context";
+import { PlayingCard } from "pages/game/playing-card/PlayingCard";
 import React from "react";
 import { useList } from "react-use";
-import { Action1 } from "types/utils/functions";
 
-export const GameGrid = ({
-	deck,
-	checkSet,
-}: {
-	deck: Deck;
-	checkSet: Action1<number[]>;
-}) => {
+export const GameGrid = () => {
+	const { deck, checkSet, gameEnded } = useMode();
 	const [picked, { push, removeAt, reset }] = useList<number>([]);
 
 	const cardClicked = (index: number) => {
@@ -31,6 +25,10 @@ export const GameGrid = ({
 
 	const isMd = useIsBreakpoint("md");
 
+	if (gameEnded) {
+		return null;
+	}
+
 	return (
 		<Grid container spacing={isMd ? 4 : 2}>
 			{deck.cards.map((card, index) => (
@@ -39,7 +37,6 @@ export const GameGrid = ({
 					xs={3}
 					key={index}
 					onClick={() => cardClicked(index)}
-					// className="ring-4 ring-red-500 "
 				>
 					<PlayingCard
 						card={card}

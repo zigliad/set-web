@@ -11,12 +11,22 @@ import { useMemo } from "react";
 const ATTRS = 4;
 const OPTIONS = 3;
 
-export const useInitGameParts = () => {
+export const useInitGameParts = ({
+	deckGeneratorMinSets = 4,
+	replacerMinSets = 4,
+}: {
+	deckGeneratorMinSets?: number;
+	replacerMinSets?: number;
+}) => {
 	const gameParts = useMemo(() => {
 		const validator = new OddSizeSetValidator(ATTRS, OPTIONS);
 		const comparator = new BasicSetsComparator();
 		const brain = new Brain(ATTRS, OPTIONS, validator, comparator);
-		const deckGenerator = new BasicDeckGenerator(12, 4, brain);
+		const deckGenerator = new BasicDeckGenerator(
+			12,
+			deckGeneratorMinSets,
+			brain
+		);
 		const randomCardsGenerator = new BasicRandomCardGenerator();
 		const cardsGenerator = new ExcludeCardsGenerator(
 			ATTRS,
@@ -24,7 +34,7 @@ export const useInitGameParts = () => {
 			randomCardsGenerator,
 			new BasicRandomCardExcludeGenerator(randomCardsGenerator)
 		);
-		const replacer = new BasicReplacer(cardsGenerator, 4);
+		const replacer = new BasicReplacer(cardsGenerator, replacerMinSets);
 		return {
 			validator,
 			comparator,
@@ -34,7 +44,7 @@ export const useInitGameParts = () => {
 			cardsGenerator,
 			replacer,
 		};
-	}, []);
+	}, [deckGeneratorMinSets, replacerMinSets]);
 
 	return gameParts;
 };

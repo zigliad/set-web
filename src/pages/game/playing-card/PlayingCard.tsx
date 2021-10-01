@@ -27,8 +27,8 @@ export const PlayingCard = ({
 	return (
 		<Paper
 			className={
-				"flex-center full shadow-lg rounded-2xl transform " +
-				(picked ? " scale-90" : " ")
+				"flex-center full shadow-lg rounded-2xl transform transition " +
+				(picked ? " scale-90 rotate-6" : " ")
 			}
 		>
 			<span className={isMd ? "transform rotate-90" : ""}>

@@ -20,9 +20,7 @@ export default class BasicReplacer extends Replacer {
 			deck.cards
 		);
 
-		indexes.map((index, i) => {
-			deck.cards.splice(index, 1, newCards[i]);
-		});
+		indexes.map((index, i) => deck.cards.splice(index, 1, newCards[i]));
 
 		if (deck.countSets() < this.minSets) {
 			this.replace(indexes, deck);
