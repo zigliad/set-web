@@ -1,12 +1,12 @@
-import { Button, Typography } from "@mui/material";
 import { useTimeMode } from "bl/modes/single/useTimeMode";
-import { GameGrid } from "components/game-grid/GameGrid";
 import { useInitGameParts } from "hooks/useInitGameParts";
 import { useIsDarkMode } from "hooks/useIsDarkMode";
+import { GameBar } from "pages/game/game-bar/GameBar";
+import { GameGrid } from "pages/game/game-grid/GameGrid";
 import React from "react";
 import { useMount } from "react-use";
 
-export const Home = () => {
+export const Game = () => {
 	const { deckGenerator, replacer } = useInitGameParts();
 
 	const {
@@ -20,6 +20,7 @@ export const Home = () => {
 		seconds,
 		rules,
 		name,
+		title,
 	} = useTimeMode(deckGenerator, replacer, 60);
 
 	useMount(newGame);
@@ -27,12 +28,13 @@ export const Home = () => {
 	const [, toggle] = useIsDarkMode();
 
 	return (
-		<div>
-			<Button onClick={toggle}>Toggle theme</Button>
-			<Typography className="text-red-500">
-				{timeLeft} / {seconds}
-			</Typography>
-			<Typography>Score: {score}</Typography>
+		<div className="space-y-4 p-12">
+			<GameBar
+				title={title}
+				name={name}
+				rules={rules}
+				newGame={newGame}
+			/>
 			<GameGrid deck={deck} checkSet={checkSet} />
 		</div>
 	);

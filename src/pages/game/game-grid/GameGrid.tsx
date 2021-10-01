@@ -1,6 +1,7 @@
-import { Grid } from "@mui/material";
+import { Grid } from "@material-ui/core";
 import Deck from "bl/deck/Deck";
-import { PlayingCard } from "components/playing-card/PlayingCard";
+import { PlayingCard } from "pages/game/playing-card/PlayingCard";
+import { useIsBreakpoint } from "hooks/useIsBreakpoint";
 import React from "react";
 import { useList } from "react-use";
 import { Action1 } from "types/utils/functions";
@@ -28,8 +29,10 @@ export const GameGrid = ({
 		}
 	};
 
+	const isMd = useIsBreakpoint("md");
+
 	return (
-		<Grid container spacing={4}>
+		<Grid container spacing={isMd ? 4 : 2}>
 			{deck.cards.map((card, index) => (
 				<Grid
 					item

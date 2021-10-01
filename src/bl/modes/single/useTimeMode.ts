@@ -23,13 +23,10 @@ export const useTimeMode = (
 	useInterval(
 		() => {
 			if (timeLeft === 0) {
-				console.log("Ended! Score is:", score);
 				setGameEnded(true);
 			} else {
-				console.log(score);
+				decTime();
 			}
-
-			decTime();
 		},
 		gameEnded ? null : 1_000
 	);
@@ -41,7 +38,7 @@ export const useTimeMode = (
 	};
 
 	const checkSet = (indexes: number[]) => {
-		const [isSet, cards] = baseCheckSet(indexes);
+		const [isSet, ] = baseCheckSet(indexes);
 		if (isSet) {
 			incScore();
 			replacer.replace(indexes, deck);
@@ -58,6 +55,7 @@ export const useTimeMode = (
 		timeLeft,
 		seconds,
 		rules: `Find as many sets as you can in ${seconds} seconds!`,
+		title: `Score: ${score} - ${timeLeft} seconds left`,
 		name: "Time Mode",
 	};
 };

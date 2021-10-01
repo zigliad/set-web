@@ -1,9 +1,9 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@material-ui/core";
 import { useIsDarkMode } from "../hooks/useIsDarkMode";
 
 export const light = createTheme({
 	palette: {
-		mode: "light",
+		type: "light",
 		primary: {
 			main: "#000",
 		},
@@ -15,7 +15,7 @@ export const light = createTheme({
 
 export const dark = createTheme({
 	palette: {
-		mode: "dark",
+		type: "dark",
 		primary: {
 			main: "#fff",
 		},

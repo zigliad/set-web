@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
-import Paper from "@mui/material/Paper";
+import { Paper } from "@material-ui/core";
 import Card from "bl/card/Card";
+import { useIsBreakpoint } from "hooks/useIsBreakpoint";
 import React from "react";
 import cardsSvgs from "utils/svgsLoader";
 
@@ -22,18 +22,18 @@ export const PlayingCard = ({
 
 	const CardImage = cardsSvgs[cardString];
 
+	const isMd = useIsBreakpoint("md");
+
 	return (
 		<Paper
-			// elevation={8}
 			className={
-				"flex-center full  transform " + (!!picked ? " scale-90" : " ")
+				"flex-center full shadow-lg rounded-2xl transform " +
+				(picked ? " scale-90" : " ")
 			}
 		>
-			{/* {picked && <span>PICKED</span>} */}
-			{/* <Typography className={picked ? "text-red-500" : "text-blue-500"}>
-				LIAD LIad
-			</Typography> */}
-			<CardImage fill={color} stroke={color} />
+			<span className={isMd ? "transform rotate-90" : ""}>
+				<CardImage fill={color} stroke={color} />
+			</span>
 		</Paper>
 	);
 };

@@ -1,6 +1,4 @@
-import { ThemeProvider } from "@mui/material";
-import CssBaseline from "@mui/material/CssBaseline";
-import { StylesProvider } from "@mui/styles";
+import { CssBaseline, StylesProvider, ThemeProvider } from "@material-ui/core";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTitle } from "react-use";
 import { AppRouter } from "routing/AppRouter";
