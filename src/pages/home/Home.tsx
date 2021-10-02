@@ -7,6 +7,7 @@ import { useIsDarkMode } from "hooks/useIsDarkMode";
 import { useSetColors } from "hooks/useSetsColors";
 import { modesConfig } from "modes/config";
 import { ModeCard } from "pages/home/ModeCard";
+import { ResponsivePaddingDiv } from "components/ResponsivePaddingDiv";
 
 export const Home = () => {
 	const [isDark, toggle] = useIsDarkMode();
@@ -14,7 +15,7 @@ export const Home = () => {
 	const { next } = useSetColors();
 
 	return (
-		<div className="full flex-center flex-col p-12 space-y-12">
+		<ResponsivePaddingDiv className="full flex-center flex-col space-y-12">
 			<Typography
 				variant="h1"
 				className="select-none"
@@ -31,10 +32,11 @@ export const Home = () => {
 				))}
 			</Grid>
 			<Fab
+				onClick={toggle}
 				className="fixed bottom-6 right-6 z-50"
 				style={{ backgroundColor: theme.palette.background.paper }}
 			>
-				<DarkModeSwitch checked={isDark} onChange={toggle} />
+				<DarkModeSwitch checked={isDark} onChange={() => {}} />
 			</Fab>
 			<Fab
 				onClick={next}
@@ -46,6 +48,6 @@ export const Home = () => {
 					style={{ color: theme.palette.text.primary }}
 				/>
 			</Fab>
-		</div>
+		</ResponsivePaddingDiv>
 	);
 };

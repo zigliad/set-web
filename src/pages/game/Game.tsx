@@ -1,3 +1,4 @@
+import { ResponsivePaddingDiv } from "components/ResponsivePaddingDiv";
 import { ModeContext } from "modes/context/context";
 import { Modes, modes } from "modes/modes";
 import { GameBar } from "pages/game/game-bar/GameBar";
@@ -14,11 +15,11 @@ export const Game = () => {
 	useMount(modeData.newGame);
 
 	return (
-		<div className="full space-y-4 p-12">
+		<ResponsivePaddingDiv className="full space-y-4">
 			<ModeContext.Provider value={modeData}>
 				<GameBar />
 				<GameGrid />
 			</ModeContext.Provider>
-		</div>
+		</ResponsivePaddingDiv>
 	);
 };

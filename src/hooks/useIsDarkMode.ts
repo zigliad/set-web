@@ -1,5 +1,5 @@
 import { set } from "local-storage";
-import { Action } from "types/utils/functions";
+import { Action } from "extra-types/utils/functions";
 import { IS_DARK_KEY, UIStore } from "UIStore";
 
 export const useIsDarkMode = () => {

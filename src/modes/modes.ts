@@ -3,7 +3,7 @@ import { createRelaxMode } from "modes/modes/relaxMode";
 import { createStaticMode } from "modes/modes/staticMode";
 import { createTimeMode } from "modes/modes/timeMode";
 import { Mode } from "modes/types/types";
-import { Supplier } from "types/utils/functions";
+import { Supplier } from "extra-types/utils/functions";
 
 export type Modes = "time60" | "static6" | "race5" | "relax";
 

@@ -1,7 +1,7 @@
 import Brain from "bl/brain/Brain";
 import Deck from "bl/deck/Deck";
 import { DispatchWithoutAction } from "react";
-import { Action1 } from "types/utils/functions";
+import { Action1 } from "extra-types/utils/functions";
 
 export type Mode = {
 	gameEnded: boolean;
