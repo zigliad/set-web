@@ -1,9 +1,10 @@
 import { CssBaseline, StylesProvider, ThemeProvider } from "@material-ui/core";
 import "FontsLoader.css";
 import Container from "react-modal-promise";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter } from "react-router-dom";
 import { useTitle } from "react-use";
 import { AppRouter } from "routing/AppRouter";
+import { HOME_ROUTE } from "routing/routes";
 import { useThemeWithMode } from "themes/theme";
 
 export const AppLoader = () => {
@@ -14,9 +15,9 @@ export const AppLoader = () => {
 		<StylesProvider injectFirst>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<Router>
+				<HashRouter basename={HOME_ROUTE}>
 					<AppRouter />
-				</Router>
+				</HashRouter>
 				<Container />
 			</ThemeProvider>
 		</StylesProvider>
