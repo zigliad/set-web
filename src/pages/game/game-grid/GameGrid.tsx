@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { useIsBreakpoint } from "hooks/useIsBreakpoint";
 import { useMode } from "modes/context/context";
 import { PlayingCard } from "pages/game/playing-card/PlayingCard";
@@ -6,7 +6,7 @@ import React from "react";
 import { useList } from "react-use";
 
 export const GameGrid = () => {
-	const { deck, checkSet, gameEnded } = useMode();
+	const { deck, checkSet, gameEnded, endgameTitle } = useMode();
 	const [picked, { push, removeAt, reset }] = useList<number>([]);
 
 	const cardClicked = (index: number) => {
@@ -26,7 +26,17 @@ export const GameGrid = () => {
 	const isMd = useIsBreakpoint("md");
 
 	if (gameEnded) {
-		return null;
+		return (
+			<div className="full flex-center">
+				<Typography
+					variant="h3"
+					className="whitespace-pre-line"
+					align="center"
+				>
+					{endgameTitle}
+				</Typography>
+			</div>
+		);
 	}
 
 	return (

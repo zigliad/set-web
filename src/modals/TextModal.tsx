@@ -11,7 +11,11 @@ export const TextModal = createModal(
 				PaperComponent={ElevatedPaper}
 			>
 				{title && <Typography variant="h6">{title}</Typography>}
-				<Typography variant="h6" color="textSecondary">
+				<Typography
+					variant="h6"
+					color="textSecondary"
+					className="whitespace-pre-line"
+				>
 					{text}
 				</Typography>
 				<div className="flex-vcenter flex-row-reverse mt-4">

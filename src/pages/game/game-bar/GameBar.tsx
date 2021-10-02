@@ -9,7 +9,7 @@ import { useHistory } from "react-router";
 import { HOME_ROUTE } from "routing/routes";
 
 export const GameBar = () => {
-	const { gameEnded, newGame, rules, title, endgameTitle, name } = useMode();
+	const { gameEnded, newGame, rules, title, name } = useMode();
 	const history = useHistory();
 	return (
 		<Paper className="flex-vcenter justify-between shadow-lg rounded-2xl p-4">
@@ -22,7 +22,7 @@ export const GameBar = () => {
 				</IconButton>
 			</div>
 			<Typography className="select-none">
-				{gameEnded ? endgameTitle : title}
+				{gameEnded ? "Game Ended" : title}
 			</Typography>
 			<IconButton
 				onClick={async () => {

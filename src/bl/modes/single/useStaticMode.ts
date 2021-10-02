@@ -44,9 +44,9 @@ export const useStaticMode = (
 		brain,
 		newGame,
 		checkSet,
-		rules: `There are many sets here. Your job is to find ${totalSets} of them.`,
+		rules: `There are many sets here.\nYour job is to find ${totalSets} of them.`,
 		title: `${sets.size} / ${totalSets} sets found`,
-		endgameTitle: `You did it! You are the best!`,
+		endgameTitle: `You did it!\nYou are the best!`,
 		name: "Static Mode",
 	};
 };

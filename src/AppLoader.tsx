@@ -1,4 +1,5 @@
 import { CssBaseline, StylesProvider, ThemeProvider } from "@material-ui/core";
+import "FontsLoader.css";
 import Container from "react-modal-promise";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useTitle } from "react-use";

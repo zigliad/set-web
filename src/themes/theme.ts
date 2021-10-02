@@ -11,6 +11,9 @@ export const light = createTheme({
 			main: "#536dfe",
 		},
 	},
+	typography: {
+		fontFamily: ["Playfair Display", "serif"].join(","),
+	},
 });
 
 export const dark = createTheme({
@@ -22,6 +25,9 @@ export const dark = createTheme({
 		secondary: {
 			main: "#536dfe",
 		},
+	},
+	typography: {
+		fontFamily: ["Playfair Display", "serif"].join(","),
 	},
 });
 
