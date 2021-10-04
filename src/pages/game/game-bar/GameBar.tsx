@@ -21,7 +21,7 @@ export const GameBar = () => {
 					<ReplayRoundedIcon />
 				</IconButton>
 			</div>
-			<Typography className="select-none">
+			<Typography className="select-none" variant="h5">
 				{gameEnded ? "Game Ended" : title}
 			</Typography>
 			<IconButton

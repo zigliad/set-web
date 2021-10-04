@@ -15,7 +15,7 @@ export const Game = () => {
 	useMount(modeData.newGame);
 
 	return (
-		<ResponsivePaddingDiv className="full space-y-4">
+		<ResponsivePaddingDiv className="full space-y-4 col-flex">
 			<ModeContext.Provider value={modeData}>
 				<GameBar />
 				<GameGrid />

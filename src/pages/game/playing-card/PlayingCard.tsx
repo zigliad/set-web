@@ -1,8 +1,9 @@
 import { Paper } from "@material-ui/core";
 import Card from "bl/card/Card";
-import { useSetColors } from "hooks/useSetsColors";
 import { useIsBreakpoint } from "hooks/useIsBreakpoint";
+import { useSetColors } from "hooks/useSetsColors";
 import React from "react";
+import { useWindowSize } from "react-use";
 import cardsSvgs from "utils/svgsLoader";
 
 export const PlayingCard = ({
@@ -23,6 +24,7 @@ export const PlayingCard = ({
 	const CardImage = cardsSvgs[cardString];
 
 	const isMd = useIsBreakpoint("md");
+	const { height } = useWindowSize();
 
 	return (
 		<Paper
@@ -32,7 +34,14 @@ export const PlayingCard = ({
 			}
 		>
 			<span className={isMd ? "transform rotate-90" : ""}>
-				<CardImage fill={color} stroke={color} />
+				<CardImage
+					fill={color}
+					stroke={color}
+					style={{
+						width: height / 4.6,
+						height: height / 4.6,
+					}}
+				/>
 			</span>
 		</Paper>
 	);

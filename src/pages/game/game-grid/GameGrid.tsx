@@ -24,10 +24,11 @@ export const GameGrid = () => {
 	};
 
 	const isMd = useIsBreakpoint("md");
+	const isLg = useIsBreakpoint("lg");
 
 	if (gameEnded) {
 		return (
-			<div className="full flex-center">
+			<div className="full flex-center flex-grow">
 				<Typography
 					variant="h3"
 					className="whitespace-pre-line"
@@ -40,7 +41,7 @@ export const GameGrid = () => {
 	}
 
 	return (
-		<Grid container spacing={isMd ? 4 : 2}>
+		<Grid container spacing={isLg ? 4 : isMd ? 3 : 2} className="flex-grow">
 			{deck.cards.map((card, index) => (
 				<Grid
 					item
