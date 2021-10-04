@@ -5,11 +5,16 @@ export const ResponsivePaddingDiv = ({
 	children,
 	className = "",
 }: PropsWithChildren<{ className?: string }>) => {
-	const isSm = useIsBreakpoint("sm");
+	const isLg = useIsBreakpoint("lg");
 	const isMd = useIsBreakpoint("md");
+	const isSm = useIsBreakpoint("sm");
 	return (
 		<div
-			className={className + " " + (isMd ? "p-12" : isSm ? "p-6" : "p-2")}
+			className={
+				className +
+				" " +
+				(isLg ? "p-12" : isMd ? "p-9" : isSm ? "p-6" : "p-2")
+			}
 		>
 			{children}
 		</div>

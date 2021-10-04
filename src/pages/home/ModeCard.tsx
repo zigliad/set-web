@@ -20,7 +20,7 @@ export const ModeCard = ({
 	const { colors } = useSetColors();
 
 	return (
-		<Grid item xs={6} md={3} lg={2}>
+		<Grid item xs={5} md={3} lg={2}>
 			<ElevatedPaper
 				key={index}
 				clickable

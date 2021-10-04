@@ -1,13 +1,12 @@
 import { Fab, Grid, Typography, useTheme } from "@material-ui/core";
 import ColorLensRoundedIcon from "@material-ui/icons/ColorLensRounded";
-import React from "react";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
-
+import { ResponsivePaddingDiv } from "components/ResponsivePaddingDiv";
 import { useIsDarkMode } from "hooks/useIsDarkMode";
 import { useSetColors } from "hooks/useSetsColors";
 import { modesConfig } from "modes/config";
 import { ModeCard } from "pages/home/ModeCard";
-import { ResponsivePaddingDiv } from "components/ResponsivePaddingDiv";
+import React from "react";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export const Home = () => {
 	const [isDark, toggle] = useIsDarkMode();
