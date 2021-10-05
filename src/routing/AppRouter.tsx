@@ -3,7 +3,7 @@ import { HOME_ROUTE, routes } from "routing/routes";
 
 export const AppRouter = () => {
 	return (
-		<div className="w-full h-screen flex-center overflow-hidden">
+		<div className="w-full h-screen flex-center overflow-x-hidden">
 			<Switch>
 				{routes.map((route) => (
 					<Route path={route.path} exact key={route.path}>
