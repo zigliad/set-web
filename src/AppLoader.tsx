@@ -6,6 +6,7 @@ import { useTitle } from "react-use";
 import { AppRouter } from "routing/AppRouter";
 import { HOME_ROUTE } from "routing/routes";
 import { useThemeWithMode } from "themes/theme";
+import { Helmet } from "react-helmet";
 
 export const AppLoader = () => {
 	const theme = useThemeWithMode();
@@ -15,6 +16,12 @@ export const AppLoader = () => {
 		<StylesProvider injectFirst>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
+				<Helmet>
+					<meta
+						name="theme-color"
+						content={theme.palette.background.default}
+					/>
+				</Helmet>
 				<HashRouter basename={HOME_ROUTE}>
 					<AppRouter />
 				</HashRouter>
