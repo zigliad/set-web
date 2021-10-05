@@ -1,15 +1,14 @@
-import { useState } from "react";
-import { useCounter, useInterval } from "react-use";
-
 import DeckGenerator from "bl/generators/deck/DeckGenerator";
 import { useSinglePlayerMode } from "bl/modes/single/useSinglePlayerMode";
 import Replacer from "bl/replacer/Replacer";
+import { useState } from "react";
+import { useCounter, useInterval } from "react-use";
 
 export const useRaceMode = (
 	deckGenerator: DeckGenerator,
 	replacer: Replacer,
 	goal: number,
-	maxTime: number = 60 * 1_000
+	maxTime: number = 30
 ) => {
 	const {
 		gameEnded,
@@ -20,16 +19,18 @@ export const useRaceMode = (
 		checkSet: baseCheckSet,
 	} = useSinglePlayerMode(deckGenerator);
 
-	const [time, { inc: incTime, reset: resetTime }] = useCounter(0);
+	const [time, { dec: decTime, reset: resetTime, set: setTime }] =
+		useCounter(maxTime);
 	const [score, { inc: incScore, reset: resetScore }] = useCounter(0);
 	const [won, setWon] = useState(false);
 
 	useInterval(
 		() => {
-			if (time >= maxTime) {
+			if (time <= 0) {
+				setTime(0);
 				setGameEnded(true);
 			}
-			incTime(0.01);
+			decTime(0.01);
 		},
 		gameEnded ? null : 10
 	);
@@ -59,10 +60,12 @@ export const useRaceMode = (
 		brain,
 		newGame,
 		checkSet,
-		rules: `Find ${goal} sets as fast as you can!`,
+		rules: `Find ${goal} sets before the clock strikes zero!`,
 		title: `${score} / ${goal} sets, ${time.toFixed(1)}`,
 		endgameTitle: won
-			? `You did it!\n${goal} sets in ${time.toFixed(2)} seconds!`
+			? `You did it!\n${goal} sets in ${(maxTime - time).toFixed(
+					2
+			  )} seconds!`
 			: "Better luck next time...",
 		name: "Race Mode",
 	};

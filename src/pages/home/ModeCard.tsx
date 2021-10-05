@@ -24,18 +24,21 @@ export const ModeCard = ({
 			<ElevatedPaper
 				key={index}
 				clickable
-				className="flex-center flex-col space-y-4"
+				className="group flex-center flex-col space-y-4"
 				onClick={() => history.push(BASE_GAME_ROUTE + modeConfig.mode)}
 			>
 				<div
-					className="rounded-full p-6 transform transition hover:rotate-12"
+					className="rounded-full p-6 transform transition group-hover:rotate-12 "
 					style={{
 						backgroundColor: theme.palette.background.default,
 						borderWidth: 4,
 						borderColor: colors[index % colors.length],
 					}}
 				>
-					<Icon fontSize="large" />
+					<Icon
+						fontSize="large"
+						className="transform transition group-hover:scale-110"
+					/>
 				</div>
 				<Typography
 					variant="h6"
