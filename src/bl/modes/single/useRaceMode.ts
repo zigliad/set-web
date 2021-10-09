@@ -52,6 +52,8 @@ export const useRaceMode = (
 			incScore();
 			replacer.replace(indexes, deck);
 		}
+
+		return isSet;
 	};
 
 	return {

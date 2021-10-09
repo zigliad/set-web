@@ -42,6 +42,8 @@ export const useTimeMode = (
 			incScore();
 			replacer.replace(indexes, deck);
 		}
+
+		return isSet;
 	};
 
 	return {

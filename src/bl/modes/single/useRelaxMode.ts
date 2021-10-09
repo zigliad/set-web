@@ -28,6 +28,8 @@ export const useRelaxMode = (
 			replacer.replace(indexes, deck);
 			setAvailableSets(deck.countSets());
 		}
+
+		return isSet;
 	};
 
 	return {

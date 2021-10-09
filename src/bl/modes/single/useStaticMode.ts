@@ -36,6 +36,8 @@ export const useStaticMode = (
 				add(setString);
 			}
 		}
+
+		return isSet;
 	};
 
 	return {

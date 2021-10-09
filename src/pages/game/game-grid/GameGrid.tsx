@@ -16,9 +16,12 @@ export const GameGrid = () => {
 		} else {
 			const pickedCloned = [...picked, index];
 			push(index);
-			checkSet(pickedCloned);
+			const isSet = checkSet(pickedCloned);
 			if (pickedCloned.length === deck.brain.setSize) {
-				reset();
+				setTimeout(reset, 200);
+			}
+
+			if (isSet) {
 			}
 		}
 	};

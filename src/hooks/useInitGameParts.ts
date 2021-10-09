@@ -27,12 +27,15 @@ export const useInitGameParts = ({
 			deckGeneratorMinSets,
 			brain
 		);
-		const randomCardsGenerator = new BasicRandomCardGenerator();
+		const randomCardGenerator = new BasicRandomCardGenerator();
+		const randomExcludeCardGenerator = new BasicRandomCardExcludeGenerator(
+			randomCardGenerator
+		);
 		const cardsGenerator = new ExcludeCardsGenerator(
 			ATTRS,
 			OPTIONS,
-			randomCardsGenerator,
-			new BasicRandomCardExcludeGenerator(randomCardsGenerator)
+			randomCardGenerator,
+			randomExcludeCardGenerator
 		);
 		const replacer = new BasicReplacer(cardsGenerator, replacerMinSets);
 		return {
@@ -40,7 +43,7 @@ export const useInitGameParts = ({
 			comparator,
 			brain,
 			deckGenerator,
-			randomCardsGenerator,
+			randomCardsGenerator: randomCardGenerator,
 			cardsGenerator,
 			replacer,
 		};
