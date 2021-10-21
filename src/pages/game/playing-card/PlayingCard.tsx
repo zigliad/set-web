@@ -1,17 +1,20 @@
 import { Paper } from "@material-ui/core";
+import React, { DispatchWithoutAction } from "react";
+import { useWindowSize } from "react-use";
+
 import Card from "bl/card/Card";
 import { useIsBreakpoint } from "hooks/useIsBreakpoint";
 import { useSetColors } from "hooks/useSetsColors";
-import React from "react";
-import { useWindowSize } from "react-use";
 import cardsSvgs from "utils/svgsLoader";
 
 export const PlayingCard = ({
 	card,
 	picked = false,
+	onClick,
 }: {
 	card: Card;
 	picked?: boolean;
+	onClick: DispatchWithoutAction;
 }) => {
 	const { colors } = useSetColors();
 	let cardString = card.attributes
@@ -28,6 +31,7 @@ export const PlayingCard = ({
 
 	return (
 		<Paper
+			onClick={onClick}
 			className={
 				"flex-center full shadow-lg rounded-2xl transform transition " +
 				(picked ? " scale-90 rotate-6" : " ")

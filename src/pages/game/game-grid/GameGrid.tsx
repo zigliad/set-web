@@ -1,9 +1,10 @@
 import { Grid, Typography } from "@material-ui/core";
+import React from "react";
+import { useList } from "react-use";
+
 import { useIsBreakpoint } from "hooks/useIsBreakpoint";
 import { useMode } from "modes/context/context";
 import { PlayingCard } from "pages/game/playing-card/PlayingCard";
-import React from "react";
-import { useList } from "react-use";
 
 export const GameGrid = () => {
 	const { deck, checkSet, gameEnded, endgameTitle } = useMode();
@@ -46,13 +47,9 @@ export const GameGrid = () => {
 	return (
 		<Grid container spacing={isLg ? 4 : isMd ? 3 : 2} className="flex-grow">
 			{deck.cards.map((card, index) => (
-				<Grid
-					item
-					xs={3}
-					key={index}
-					onClick={() => cardClicked(index)}
-				>
+				<Grid item xs={3} key={index}>
 					<PlayingCard
+						onClick={() => cardClicked(index)}
 						card={card}
 						picked={picked.indexOf(index) > -1}
 					/>
