@@ -21,7 +21,6 @@ export const PlayingCard = ({
 		.map((attr) => `${attr + 1}`)
 		.reduce((a1, a2) => a1 + a2, "");
 
-	console.log(cardString);
 	const color = colors[+cardString.charAt(3) - 1];
 	const borderColor =
 		cardString.length >= 5
