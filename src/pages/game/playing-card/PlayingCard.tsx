@@ -21,10 +21,15 @@ export const PlayingCard = ({
 		.map((attr) => `${attr + 1}`)
 		.reduce((a1, a2) => a1 + a2, "");
 
-	const color = colors[+cardString.charAt(cardString.length - 1) - 1];
-	cardString = cardString.slice(0, -1); // For the image, ignore the color attribute
+	console.log(cardString);
+	const color = colors[+cardString.charAt(3) - 1];
+	const borderColor =
+		cardString.length >= 5
+			? colors[+cardString.charAt(4) - 1]
+			: "transparent";
+	const imageCardString = cardString.slice(0, 3); // For the image, ignore the color attribute
 
-	const CardImage = cardsSvgs[cardString];
+	const CardImage = cardsSvgs[imageCardString];
 
 	const isMd = useIsBreakpoint("md");
 	const { height } = useWindowSize();
@@ -35,6 +40,15 @@ export const PlayingCard = ({
 			className={
 				"flex-center full shadow-lg rounded-2xl transform transition " +
 				(picked ? " scale-90 rotate-6" : " ")
+			}
+			style={
+				cardString.length >= 5
+					? {
+							borderWidth: 4,
+							borderStyle: "solid",
+							borderColor: borderColor,
+					  }
+					: {}
 			}
 		>
 			<span className={isMd ? "transform rotate-90" : ""}>

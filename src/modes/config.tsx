@@ -4,8 +4,8 @@ import AccessTimeRoundedIcon from "@material-ui/icons/AccessTimeRounded";
 import EmojiFlagsRoundedIcon from "@material-ui/icons/EmojiFlagsRounded";
 import LocalBarRoundedIcon from "@material-ui/icons/LocalBarRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-import { Modes } from "modes/modes";
 
+import { Modes } from "modes/modes";
 
 export type ModeConfig = {
 	title: string;
@@ -17,6 +17,11 @@ export const modesConfig: ModeConfig[] = [
 	{
 		title: "Time",
 		mode: "time60",
+		Icon: AccessTimeRoundedIcon,
+	},
+	{
+		title: "Time: Harder",
+		mode: "time60Attributes5",
 		Icon: AccessTimeRoundedIcon,
 	},
 	{
@@ -32,6 +37,11 @@ export const modesConfig: ModeConfig[] = [
 	{
 		title: "Relax",
 		mode: "relax",
+		Icon: LocalBarRoundedIcon,
+	},
+	{
+		title: "Relax: Harder",
+		mode: "relaxHard",
 		Icon: LocalBarRoundedIcon,
 	},
 ];
