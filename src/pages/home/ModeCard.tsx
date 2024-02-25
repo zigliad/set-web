@@ -1,9 +1,10 @@
 import { Grid, Typography, useTheme } from "@material-ui/core";
+import React from "react";
+import { useHistory } from "react-router";
+
 import { ElevatedPaper } from "components/paper/ElevatedPaper";
 import { useSetColors } from "hooks/useSetsColors";
 import { ModeConfig } from "modes/config";
-import React from "react";
-import { useHistory } from "react-router";
 import { BASE_GAME_ROUTE } from "routing/routes";
 
 export const ModeCard = ({
@@ -24,7 +25,7 @@ export const ModeCard = ({
 			<ElevatedPaper
 				key={index}
 				clickable
-				className="group flex-center flex-col space-y-4"
+				className="group h-full flex-center flex-col space-y-4"
 				onClick={() => history.push(BASE_GAME_ROUTE + modeConfig.mode)}
 			>
 				<div
@@ -43,6 +44,7 @@ export const ModeCard = ({
 				<Typography
 					variant="h6"
 					className="select-none"
+					align="center"
 					style={{ fontWeight: 700 }}
 				>
 					{modeConfig.title}
