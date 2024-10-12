@@ -1,4 +1,5 @@
 import { Supplier } from "extra-types/utils/functions";
+import { createDiscoMode } from "modes/modes/discoMode";
 import { createRaceMode } from "modes/modes/raceMode";
 import { createRelaxMode } from "modes/modes/relaxMode";
 import { createStaticMode } from "modes/modes/staticMode";
@@ -10,6 +11,7 @@ export type Modes =
 	| "time60Attributes5"
 	| "static6"
 	| "race5"
+	| "disco"
 	| "relax"
 	| "relaxHard";
 
@@ -18,6 +20,7 @@ export const modes: Record<Modes, Supplier<Mode>> = {
 	time60Attributes5: createTimeMode(4, 60, 5),
 	static6: createStaticMode(6, 8),
 	race5: createRaceMode(5, 30),
+	disco: createDiscoMode(4, 60),
 	relax: createRelaxMode(4),
 	relaxHard: createRelaxMode(2, 5),
 };

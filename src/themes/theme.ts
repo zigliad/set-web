@@ -1,4 +1,5 @@
 import { createTheme } from "@material-ui/core";
+
 import { useIsDarkMode } from "../hooks/useIsDarkMode";
 
 export const light = createTheme({

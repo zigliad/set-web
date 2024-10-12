@@ -1,6 +1,7 @@
 import { SvgIconTypeMap } from "@material-ui/core";
 import { OverridableComponent } from "@material-ui/core/OverridableComponent";
 import AccessTimeRoundedIcon from "@material-ui/icons/AccessTimeRounded";
+import ColorLensRoundedIcon from "@material-ui/icons/ColorLensRounded";
 import EmojiFlagsRoundedIcon from "@material-ui/icons/EmojiFlagsRounded";
 import LocalBarRoundedIcon from "@material-ui/icons/LocalBarRounded";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
@@ -33,6 +34,11 @@ export const modesConfig: ModeConfig[] = [
 		title: "Race",
 		mode: "race5",
 		Icon: EmojiFlagsRoundedIcon,
+	},
+	{
+		title: "Disco",
+		mode: "disco",
+		Icon: ColorLensRoundedIcon,
 	},
 	{
 		title: "Relax",

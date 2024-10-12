@@ -1,12 +1,14 @@
 import { CssBaseline, StylesProvider, ThemeProvider } from "@material-ui/core";
-import "FontsLoader.css";
 import { Helmet } from "react-helmet";
 import Container from "react-modal-promise";
 import { HashRouter } from "react-router-dom";
 import { useTitle } from "react-use";
+
 import { AppRouter } from "routing/AppRouter";
 import { HOME_ROUTE } from "routing/routes";
 import { useThemeWithMode } from "themes/theme";
+
+import "FontsLoader.css";
 
 export const AppLoader = () => {
 	const theme = useThemeWithMode();
