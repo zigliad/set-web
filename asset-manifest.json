@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/set-web/static/css/main.71837c32.css",
-    "main.js": "/set-web/static/js/main.59bc6ab0.js",
+    "main.css": "/set-web/static/css/main.5258d94b.css",
+    "main.js": "/set-web/static/js/main.75c1f1d1.js",
     "static/media/playfair-display-v22-latin-900italic.svg": "/set-web/static/media/playfair-display-v22-latin-900italic.d6884d5a16df4222db18.svg",
     "static/media/playfair-display-v22-latin-800italic.svg": "/set-web/static/media/playfair-display-v22-latin-800italic.f9cc47e5de0bca3b0f99.svg",
     "static/media/playfair-display-v22-latin-700italic.svg": "/set-web/static/media/playfair-display-v22-latin-700italic.20f77d2c96fb1a6b1502.svg",
@@ -90,11 +90,11 @@
     "static/media/111.svg": "/set-web/static/media/111.1aae224a1b6ebee54dfb9b8eb03ddec6.svg",
     "static/media/132.svg": "/set-web/static/media/132.674acabbf5c4f3a3e6b0f336897bf015.svg",
     "static/media/112.svg": "/set-web/static/media/112.57ab6716c2f7648b2e9196e15e0aea3e.svg",
-    "main.71837c32.css.map": "/set-web/static/css/main.71837c32.css.map",
-    "main.59bc6ab0.js.map": "/set-web/static/js/main.59bc6ab0.js.map"
+    "main.5258d94b.css.map": "/set-web/static/css/main.5258d94b.css.map",
+    "main.75c1f1d1.js.map": "/set-web/static/js/main.75c1f1d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.71837c32.css",
-    "static/js/main.59bc6ab0.js"
+    "static/css/main.5258d94b.css",
+    "static/js/main.75c1f1d1.js"
   ]
 }
