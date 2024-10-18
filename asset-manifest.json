@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/set-web/static/css/main.5258d94b.css",
-    "main.js": "/set-web/static/js/main.0473433f.js",
+    "main.js": "/set-web/static/js/main.7e433b37.js",
     "static/media/playfair-display-v22-latin-900italic.svg": "/set-web/static/media/playfair-display-v22-latin-900italic.d6884d5a16df4222db18.svg",
     "static/media/playfair-display-v22-latin-800italic.svg": "/set-web/static/media/playfair-display-v22-latin-800italic.f9cc47e5de0bca3b0f99.svg",
     "static/media/playfair-display-v22-latin-700italic.svg": "/set-web/static/media/playfair-display-v22-latin-700italic.20f77d2c96fb1a6b1502.svg",
@@ -68,7 +68,7 @@
     "static/media/223.svg": "/set-web/static/media/223.33a2f4d54ce045df9bda566ec7c3dbe1.svg",
     "static/media/221.svg": "/set-web/static/media/221.67dee740041de5de4055bb0390211703.svg",
     "static/media/222.svg": "/set-web/static/media/222.1c9a24eb64565191d85ddabc8d8a6cef.svg",
-    "static/media/123.svg": "/set-web/static/media/123.13ee25159318b869cb43edbdafdddc5f.svg",
+    "static/media/123.svg": "/set-web/static/media/123.fe2e5a6606dea4e2efa544280bd855ea.svg",
     "static/media/333.svg": "/set-web/static/media/333.f776de1ed62bb6f8387da94c48f6623e.svg",
     "static/media/313.svg": "/set-web/static/media/313.8801d257635dc52bbb5f710b1960a2a9.svg",
     "static/media/121.svg": "/set-web/static/media/121.1c34448b92bf2fbf1ddea99e2b8bc596.svg",
@@ -91,10 +91,10 @@
     "static/media/132.svg": "/set-web/static/media/132.674acabbf5c4f3a3e6b0f336897bf015.svg",
     "static/media/112.svg": "/set-web/static/media/112.57ab6716c2f7648b2e9196e15e0aea3e.svg",
     "main.5258d94b.css.map": "/set-web/static/css/main.5258d94b.css.map",
-    "main.0473433f.js.map": "/set-web/static/js/main.0473433f.js.map"
+    "main.7e433b37.js.map": "/set-web/static/js/main.7e433b37.js.map"
   },
   "entrypoints": [
     "static/css/main.5258d94b.css",
-    "static/js/main.0473433f.js"
+    "static/js/main.7e433b37.js"
   ]
 }
