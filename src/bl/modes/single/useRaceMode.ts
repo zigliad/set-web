@@ -1,8 +1,9 @@
+import { useState } from "react";
+import { useCounter, useInterval } from "react-use";
+
 import DeckGenerator from "bl/generators/deck/DeckGenerator";
 import { useSinglePlayerMode } from "bl/modes/single/useSinglePlayerMode";
 import Replacer from "bl/replacer/Replacer";
-import { useState } from "react";
-import { useCounter, useInterval } from "react-use";
 
 export const useRaceMode = (
 	deckGenerator: DeckGenerator,
