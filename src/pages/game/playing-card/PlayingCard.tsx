@@ -37,8 +37,8 @@ export const PlayingCard = ({
 		<Paper
 			onClick={onClick}
 			className={
-				"flex-center full shadow-lg rounded-2xl transform transition " +
-				(picked ? " scale-90 rotate-6" : " ")
+				"flex-center full shadow-lg rounded-2xl transform transition cursor-pointer " +
+				(picked ? " scale-90 rotate-6" : " hover:rotate-2")
 			}
 			style={
 				cardString.length >= 5
