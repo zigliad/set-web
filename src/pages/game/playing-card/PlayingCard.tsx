@@ -30,6 +30,7 @@ export const PlayingCard = ({
 
 	const CardImage = cardsSvgs[imageCardString];
 
+	const isSm = useIsBreakpoint("sm");
 	const isMd = useIsBreakpoint("md");
 	const { height } = useWindowSize();
 
@@ -38,7 +39,7 @@ export const PlayingCard = ({
 			onClick={onClick}
 			className={
 				"flex-center full shadow-lg rounded-2xl transform transition cursor-pointer " +
-				(picked ? " scale-90 rotate-6" : " hover:rotate-2")
+				(picked ? " scale-90 rotate-6" : isSm ? " hover:rotate-2" : "")
 			}
 			style={
 				cardString.length >= 5
